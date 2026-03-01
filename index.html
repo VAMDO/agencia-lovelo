@@ -1,53 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAMDO | Compra tu Plan</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', sans-serif; }
-        body { background-color: #000; color: white; text-align: center; }
-        header { padding: 40px 20px; background: linear-gradient(to bottom, #1a1a1a, #000); }
-        .logo { font-size: 50px; font-weight: bold; color: #E50914; letter-spacing: 2px; }
-        .hero { padding: 60px 20px; }
-        h1 { font-size: 35px; margin-bottom: 20px; }
-        p { color: #ccc; margin-bottom: 40px; font-size: 18px; }
-        .planes { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-        .card { background: #141414; border: 1px solid #333; padding: 30px; border-radius: 10px; width: 300px; transition: 0.3s; }
-        .card:hover { border-color: #E50914; transform: scale(1.05); }
-        .precio { font-size: 40px; font-weight: bold; margin: 20px 0; color: #E50914; }
-        .btn { 
-            display: block; background-color: #E50914; color: white; padding: 15px; 
-            text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px; 
-        }
-        .btn:hover { background-color: #b20710; }
-        footer { margin-top: 50px; padding: 30px; color: #666; font-size: 12px; border-top: 1px solid #222; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAMDO | Plan $3.000</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', sans-serif; }
+    body {
+        color: white;
+        text-align: center;
+        background: linear-gradient(rgba(0,0,60,0.6), rgba(100,0,150,0.6)), 
+                    url('2242e636-789f-4baf-a026-d13e47c34fe8.png') no-repeat center center/cover;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    header { padding: 40px 20px; z-index: 10; position: relative; }
+    .logo { font-size: 50px; font-weight: bold; color: #00ffff; letter-spacing: 2px; text-shadow: 1px 1px 5px black; position: relative; z-index: 10; }
+
+    .hero { 
+        padding: 60px 20px; 
+        background: rgba(0,0,0,0.5); 
+        border-radius: 15px; 
+        width: 90%; max-width: 600px; 
+        animation: float 3s ease-in-out infinite, appear 1s ease-out forwards;
+        transform: translateY(50px);
+        opacity: 0;
+        transition: backdrop-filter 0.5s ease, box-shadow 0.5s ease;
+        position: relative;
+        z-index: 10;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(50px); }
+        50% { transform: translateY(35px); }
+    }
+
+    @keyframes appear {
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .hero:hover {
+        backdrop-filter: blur(10px) brightness(1.2);
+        box-shadow: 0 0 50px rgba(255,255,255,0.3);
+    }
+
+    h1 { font-size: 38px; margin-bottom: 20px; color: #ffcc00; text-shadow: 1px 1px 5px black; }
+    p { color: #ddd; margin-bottom: 40px; font-size: 18px; }
+
+    .planes { display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+    .card { 
+        background: rgba(30,30,50,0.9); 
+        border: 2px solid #ffcc00; 
+        padding: 30px; 
+        border-radius: 15px; 
+        transition: 0.3s; 
+    }
+    .card:hover { border-color: #00ffff; transform: scale(1.08); }
+
+    .precio { font-size: 42px; font-weight: bold; margin: 20px 0; color: #ff3300; text-shadow: 1px 1px 3px black; }
+
+    .btn { 
+        display: block; 
+        background-color: #ff3300; 
+        color: white; 
+        padding: 15px; 
+        text-decoration: none; 
+        font-weight: bold; 
+        border-radius: 10px; 
+        margin-top: 20px; 
+        box-shadow: 0 0 10px rgba(255,51,0,0.7);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite, glow 3s infinite alternate;
+    }
+
+    .btn:hover { 
+        background-color: #ff5500; 
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(255,85,0,1);
+    }
+
+    @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 10px rgba(255,51,0,0.7); }
+        50% { box-shadow: 0 0 20px rgba(255,51,0,1); }
+    }
+
+    @keyframes glow {
+        0% { box-shadow: 0 0 10px rgba(255,51,0,0.7); }
+        100% { box-shadow: 0 0 25px rgba(255,255,0,0.9); }
+    }
+
+    footer { margin-top: 50px; padding: 30px; color: #ccc; font-size: 12px; border-top: 1px solid #222; position: relative; z-index: 10; }
+
+    /* Partículas interactivas */
+    .particle {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0.7;
+        transform: scale(1);
+        transition: transform 0.2s, opacity 0.2s;
+    }
+</style>
 </head>
 <body>
 
 <header>
-    <div class="logo">VAMDO</div>
+    <div class="logo">Vamdo</div>
 </header>
 
 <section class="hero">
-    <h1>Compra tu Plan y accede ahora</h1>
-    <p>Suscribite y empezá a disfrutar de nuestro contenido exclusivo.</p>
+    <h1>Accede al Plan Único</h1>
+    <p>Disfrutá de nuestro contenido exclusivo por solo $3.000</p>
 
     <div class="planes">
         <div class="card">
             <h3>PLAN ÚNICO</h3>
             <div class="precio">$3.000</div>
-            <p>Acceso completo a nuestro servicio</p>
+            <p>Acceso completo a todo nuestro servicio</p>
             <a href="https://mpago.la/1G6J3HR" class="btn">PAGAR AHORA</a>
         </div>
     </div>
 </section>
 
 <footer>
-    &copy; 2026 VAMDO Agency - Todos los derechos reservados.
+    &copy; 2026 VAMDO - Todos los derechos reservados.
 </footer>
+
+<!-- Generador de partículas interactivas -->
+<script>
+    const colors = ['#ff3300','#ffcc00','#00ffff','#ff00ff','#33ff77'];
+    const numParticles = 50;
+    const particles = [];
+
+    for (let i = 0; i < numParticles; i++) {
+        const p = document.createElement('div');
+        p.classList.add('particle');
+        const size = Math.random() * 6 + 2;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = Math.random() * 100 + 'vw';
+        p.style.top = Math.random() * 100 + 'vh';
+        p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        p.speedX = (Math.random() - 0.5) * 0.2;
+        p.speedY = (Math.random() - 0.5) * 0.2;
+        document.body.appendChild(p);
+        particles.push(p);
+    }
+
+    document.addEventListener('mousemove', e => {
+        particles.forEach(p => {
+            const dx = e.clientX - (p.offsetLeft + p.offsetWidth/2);
+            const dy = e.clientY - (p.offsetTop + p.offsetHeight/2);
+            p.style.transform = `translate(${dx*0.02}px, ${dy*0.02}px) scale(${Math.random()*0.5+0.8})`;
+        });
+    });
+
+    function animate() {
+        particles.forEach(p => {
+            let top = parseFloat(p.style.top);
+            let left = parseFloat(p.style.left);
+            top -= p.speedY;
+            left += p.speedX;
+            if(top < -5) top = window.innerHeight + 5;
+            if(left > window.innerWidth + 5) left = -5;
+            if(left < -5) left = window.innerWidth + 5;
+            p.style.top = top + 'px';
+            p.style.left = left + 'px';
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
+</script>
 
 </body>
 </html>
-
