@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovelo | Contenido Exclusivo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', sans-serif; }
+        body { background-color: #000; color: white; text-align: center; }
+        header { padding: 40px 20px; background: linear-gradient(to bottom, #1a1a1a, #000); }
+        .logo { font-size: 50px; font-weight: bold; color: #E50914; letter-spacing: 2px; }
+        .hero { padding: 60px 20px; }
+        h1 { font-size: 35px; margin-bottom: 20px; }
+        p { color: #ccc; margin-bottom: 40px; font-size: 18px; }
+        
+        .planes { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
+        .card { background: #141414; border: 1px solid #333; padding: 30px; border-radius: 10px; width: 300px; transition: 0.3s; }
+        .card:hover { border-color: #E50914; transform: scale(1.05); }
+        .precio { font-size: 40px; font-weight: bold; margin: 20px 0; color: #E50914; }
+        
+        .btn { 
+            display: block; background-color: #E50914; color: white; padding: 15px; 
+            text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px; 
+        }
+        .btn:hover { background-color: #b20710; }
+        footer { margin-top: 50px; padding: 30px; color: #666; font-size: 12px; border-top: 1px solid #222; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LOVELO</div>
+    </header>
+
+    <section class="hero">
+        <h1>Mira los mejores videos exclusivos</h1>
+        <p>Suscribite hoy y accedé a todo el contenido de nuestra plataforma.</p>
+
+        <div class="planes">
+            <div class="card">
+                <h3>PLAN BÁSICO</h3>
+                <div class="precio">$1.000</div>
+                <p>Acceso por 30 días</p>
+                <a href="#" class="btn">PAGAR AHORA</a>
+            </div>
+
+            <div class="card">
+                <h3>PLAN PREMIUM</h3>
+                <div class="precio">$2.500</div>
+                <p>Acceso Total + Descargas</p>
+                <a href="#" class="btn">PAGAR AHORA</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Lovelo Agency - Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>
