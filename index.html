@@ -9,8 +9,8 @@
     body {
         color: white;
         text-align: center;
-        background: linear-gradient(rgba(0,0,60,0.6), rgba(100,0,150,0.6)), 
-                    url('2242e636-789f-4baf-a026-d13e47c34fe8.png') no-repeat center center/cover;
+        background: linear-gradient(rgba(0,0,80,0.5), rgba(0,50,150,0.5)), 
+                    url('7cc60412-c8d3-46b0-a29c-4f3e2029cd2a.png') no-repeat center center/cover;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -29,36 +29,20 @@
         animation: float 3s ease-in-out infinite, appear 1s ease-out forwards;
         transform: translateY(50px);
         opacity: 0;
-        transition: backdrop-filter 0.5s ease, box-shadow 0.5s ease;
         position: relative;
         z-index: 10;
     }
 
-    @keyframes float {
-        0%, 100% { transform: translateY(50px); }
-        50% { transform: translateY(35px); }
-    }
+    @keyframes float { 0%,100%{transform:translateY(50px);} 50%{transform:translateY(35px);} }
+    @keyframes appear { to { transform: translateY(0); opacity:1; } }
 
-    @keyframes appear {
-        to { transform: translateY(0); opacity: 1; }
-    }
-
-    .hero:hover {
-        backdrop-filter: blur(10px) brightness(1.2);
-        box-shadow: 0 0 50px rgba(255,255,255,0.3);
-    }
+    .hero:hover { backdrop-filter: blur(10px) brightness(1.2); box-shadow:0 0 50px rgba(255,255,255,0.3); }
 
     h1 { font-size: 38px; margin-bottom: 20px; color: #ffcc00; text-shadow: 1px 1px 5px black; }
     p { color: #ddd; margin-bottom: 40px; font-size: 18px; }
 
     .planes { display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-    .card { 
-        background: rgba(30,30,50,0.9); 
-        border: 2px solid #ffcc00; 
-        padding: 30px; 
-        border-radius: 15px; 
-        transition: 0.3s; 
-    }
+    .card { background: rgba(30,30,50,0.9); border: 2px solid #ffcc00; padding: 30px; border-radius: 15px; transition: 0.3s; }
     .card:hover { border-color: #00ffff; transform: scale(1.08); }
 
     .precio { font-size: 42px; font-weight: bold; margin: 20px 0; color: #ff3300; text-shadow: 1px 1px 3px black; }
@@ -72,38 +56,19 @@
         font-weight: bold; 
         border-radius: 10px; 
         margin-top: 20px; 
-        box-shadow: 0 0 10px rgba(255,51,0,0.7);
+        box-shadow: 0 0 15px rgba(255,51,0,0.8);
         transition: all 0.3s ease;
         animation: pulse 2s infinite, glow 3s infinite alternate;
     }
 
-    .btn:hover { 
-        background-color: #ff5500; 
-        transform: scale(1.1);
-        box-shadow: 0 0 25px rgba(255,85,0,1);
-    }
+    .btn:hover { background-color: #ff5500; transform: scale(1.1); box-shadow: 0 0 30px rgba(255,85,0,1); }
 
-    @keyframes pulse {
-        0%, 100% { box-shadow: 0 0 10px rgba(255,51,0,0.7); }
-        50% { box-shadow: 0 0 20px rgba(255,51,0,1); }
-    }
-
-    @keyframes glow {
-        0% { box-shadow: 0 0 10px rgba(255,51,0,0.7); }
-        100% { box-shadow: 0 0 25px rgba(255,255,0,0.9); }
-    }
+    @keyframes pulse { 0%,100%{box-shadow:0 0 15px rgba(255,51,0,0.8);} 50%{box-shadow:0 0 30px rgba(255,51,0,1);} }
+    @keyframes glow { 0%{box-shadow:0 0 15px rgba(255,51,0,0.8);} 100%{box-shadow:0 0 35px rgba(255,255,0,0.9);} }
 
     footer { margin-top: 50px; padding: 30px; color: #ccc; font-size: 12px; border-top: 1px solid #222; position: relative; z-index: 10; }
 
-    /* Partículas interactivas */
-    .particle {
-        position: absolute;
-        border-radius: 50%;
-        pointer-events: none;
-        opacity: 0.7;
-        transform: scale(1);
-        transition: transform 0.2s, opacity 0.2s;
-    }
+    .particle { position:absolute; border-radius:50%; pointer-events:none; opacity:0.7; transform:scale(1); transition: transform 0.2s, opacity 0.2s; }
 </style>
 </head>
 <body>
@@ -130,23 +95,21 @@
     &copy; 2026 VAMDO - Todos los derechos reservados.
 </footer>
 
-<!-- Generador de partículas interactivas -->
 <script>
     const colors = ['#ff3300','#ffcc00','#00ffff','#ff00ff','#33ff77'];
     const numParticles = 50;
     const particles = [];
-
-    for (let i = 0; i < numParticles; i++) {
-        const p = document.createElement('div');
+    for(let i=0;i<numParticles;i++){
+        const p=document.createElement('div');
         p.classList.add('particle');
-        const size = Math.random() * 6 + 2;
-        p.style.width = size + 'px';
-        p.style.height = size + 'px';
-        p.style.left = Math.random() * 100 + 'vw';
-        p.style.top = Math.random() * 100 + 'vh';
-        p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        p.speedX = (Math.random() - 0.5) * 0.2;
-        p.speedY = (Math.random() - 0.5) * 0.2;
+        const size=Math.random()*6+2;
+        p.style.width=size+'px';
+        p.style.height=size+'px';
+        p.style.left=Math.random()*100+'vw';
+        p.style.top=Math.random()*100+'vh';
+        p.style.backgroundColor=colors[Math.floor(Math.random()*colors.length)];
+        p.speedX=(Math.random()-0.5)*0.2;
+        p.speedY=(Math.random()-0.5)*0.2;
         document.body.appendChild(p);
         particles.push(p);
     }
@@ -159,17 +122,17 @@
         });
     });
 
-    function animate() {
-        particles.forEach(p => {
-            let top = parseFloat(p.style.top);
-            let left = parseFloat(p.style.left);
-            top -= p.speedY;
-            left += p.speedX;
-            if(top < -5) top = window.innerHeight + 5;
-            if(left > window.innerWidth + 5) left = -5;
-            if(left < -5) left = window.innerWidth + 5;
-            p.style.top = top + 'px';
-            p.style.left = left + 'px';
+    function animate(){
+        particles.forEach(p=>{
+            let top=parseFloat(p.style.top);
+            let left=parseFloat(p.style.left);
+            top-=p.speedY;
+            left+=p.speedX;
+            if(top<-5) top=window.innerHeight+5;
+            if(left>window.innerWidth+5) left=-5;
+            if(left<-5) left=window.innerWidth+5;
+            p.style.top=top+'px';
+            p.style.left=left+'px';
         });
         requestAnimationFrame(animate);
     }
