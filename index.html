@@ -3,59 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lovelo | Contenido Exclusivo</title>
+    <title>VAMDO | Servicios Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', sans-serif; }
-        body { background-color: #000; color: white; text-align: center; }
-        header { padding: 40px 20px; background: linear-gradient(to bottom, #1a1a1a, #000); }
-        .logo { font-size: 50px; font-weight: bold; color: #E50914; letter-spacing: 2px; }
-        .hero { padding: 60px 20px; }
-        h1 { font-size: 35px; margin-bottom: 20px; }
-        p { color: #ccc; margin-bottom: 40px; font-size: 18px; }
+        /* Reset y fuentes */
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color:#121212; color:#fff; line-height:1.6; }
+        a { text-decoration:none; color:#fff; }
+
+        /* Header */
+        header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background:#000; border-bottom:2px solid #E50914; }
+        .logo { font-size:2em; font-weight:900; color:#E50914; }
         
-        .planes { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-        .card { background: #141414; border: 1px solid #333; padding: 30px; border-radius: 10px; width: 300px; transition: 0.3s; }
-        .card:hover { border-color: #E50914; transform: scale(1.05); }
-        .precio { font-size: 40px; font-weight: bold; margin: 20px 0; color: #E50914; }
-        
-        .btn { 
-            display: block; background-color: #E50914; color: white; padding: 15px; 
-            text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px; 
-        }
-        .btn:hover { background-color: #b20710; }
-        footer { margin-top: 50px; padding: 30px; color: #666; font-size: 12px; border-top: 1px solid #222; }
+        /* Hero */
+        .hero { text-align:center; padding:80px 20px; background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581090700227-7a14b52d6f8a?auto=format&fit=crop&w=1770&q=80') no-repeat center/cover; }
+        .hero h1 { font-size:3em; margin-bottom:20px; }
+        .hero p { font-size:1.2em; color:#ccc; margin-bottom:30px; }
+        .btn-primary { display:inline-block; background:#E50914; color:#fff; padding:15px 30px; border-radius:5px; font-weight:700; transition:0.3s; }
+        .btn-primary:hover { background:#b20710; }
+
+        /* Planes */
+        .planes { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:40px 20px; }
+        .card { background:#1a1a1a; border:1px solid #333; border-radius:10px; width:280px; padding:30px; transition:0.3s; text-align:center; }
+        .card:hover { border-color:#E50914; transform:scale(1.05); }
+        .card h3 { font-size:1.8em; margin-bottom:15px; color:#E50914; }
+        .precio { font-size:2.5em; font-weight:900; margin-bottom:20px; }
+        .card ul { list-style:none; margin-bottom:20px; color:#ccc; text-align:left; padding-left:20px; }
+        .card ul li { margin-bottom:10px; }
+        .card a.btn { display:block; background:#E50914; color:#fff; padding:12px; border-radius:5px; font-weight:700; transition:0.3s; }
+        .card a.btn:hover { background:#b20710; }
+
+        /* Footer */
+        footer { text-align:center; padding:30px 20px; color:#777; border-top:1px solid #333; margin-top:40px; font-size:14px; }
+
+        /* Responsivo */
+        @media(max-width:768px){ .planes { flex-direction:column; align-items:center; } .hero h1{font-size:2em;} }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">LOVELO</div>
-    </header>
+<header>
+    <div class="logo">VAMDO</div>
+</header>
 
-    <section class="hero">
-        <h1>Mira los mejores videos exclusivos</h1>
-        <p>Suscribite hoy y accedé a todo el contenido de nuestra plataforma.</p>
+<section class="hero">
+    <h1>Vende tus páginas web como un profesional</h1>
+    <p>Creación de páginas personalizadas para tus clientes. Diseño moderno y funcional.</p>
+    <a href="#planes" class="btn-primary">Ver Planes</a>
+</section>
 
-        <div class="planes">
-            <div class="card">
-                <h3>PLAN BÁSICO</h3>
-                <div class="precio">$1.000</div>
-                <p>Acceso por 30 días</p>
-                <a href="#" class="btn">PAGAR AHORA</a>
-            </div>
+<section class="planes" id="planes">
+    <div class="card">
+        <h3>Básico</h3>
+        <div class="precio">$1.000</div>
+        <ul>
+            <li>Página simple</li>
+            <li>1 sección de contacto</li>
+            <li>Diseño básico responsivo</li>
+        </ul>
+        <a href="TU_LINK_DE_MERCADO_PAGO_BASICO" class="btn">PAGAR AHORA</a>
+    </div>
 
-            <div class="card">
-                <h3>PLAN PREMIUM</h3>
-                <div class="precio">$2.500</div>
-                <p>Acceso Total + Descargas</p>
-                <a href="#" class="btn">PAGAR AHORA</a>
-            </div>
-        </div>
-    </section>
+    <div class="card">
+        <h3>Premium</h3>
+        <div class="precio">$2.500</div>
+        <ul>
+            <li>Página completa</li>
+            <li>Secciones personalizadas</li>
+            <li>Diseño moderno y responsivo</li>
+        </ul>
+        <a href="TU_LINK_DE_MERCADO_PAGO_PREMIUM" class="btn">PAGAR AHORA</a>
+    </div>
 
-    <footer>
-        &copy; 2026 Lovelo Agency - Todos los derechos reservados.
-    </footer>
+    <div class="card">
+        <h3>VIP</h3>
+        <div class="precio">$5.000</div>
+        <ul>
+            <li>Página completa + tienda</li>
+            <li>Integración con Mercado Pago</li>
+            <li>Soporte y actualizaciones</li>
+        </ul>
+        <a href="TU_LINK_DE_MERCADO_PAGO_VIP" class="btn">PAGAR AHORA</a>
+    </div>
+</section>
+
+<footer>
+    &copy; 2026 VAMDO Agency - Todos los derechos reservados.
+</footer>
 
 </body>
 </html>
